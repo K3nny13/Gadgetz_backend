@@ -25,7 +25,7 @@
 			<div id="main-navbar" class="navbar-menu" :class="{ 'is-active': menuClass }">
 				<div class="navbar-start">
 					<div class="navbar-item">
-						<form method="get" action="{% url 'search' %}">
+						<form method="get" action="">
 							<div class="field has-addons">
 								<div class="control">
 									<input type="text" class="input" placeholder="Search..." name="query">
@@ -47,7 +47,7 @@
 
 								<div class="navbar-dropdown">
 									{% for subcategory in category.children.all %}
-										<a href="{% url 'category_detail' subcategory.slug %}" class="navbar-item">{{ subcategory.title }}</a>
+<!--										<a href="{% url 'category_detail' subcategory.slug %}" class="navbar-item">{{ subcategory.title }}</a>-->
 									{% endfor %}
 								</div>
 							</div>
@@ -55,7 +55,7 @@
 					{% endfor %}
 
 					<div class="navbar-item">
-						<a href="{% url 'cart' %}" class="button is-primary">Cart ([[ numItems ]])</a>
+						<a href="" class="button is-primary">Cart ([[ numItems ]])</a>
 					</div>
 
 					{% if request.user.is_authenticated %}
@@ -65,8 +65,8 @@
 					{% else %}
 						<div class="navbar-item">
 							<div class="buttons">
-								<a href="{% url 'signup' %}" class="button is-primary"><strong>Sign up</strong></a>
-								<a href="{% url 'login' %}" class="button is-light">Log in</a>
+								<a href="" class="button is-primary"><strong>Sign up</strong></a>
+								<a href="" class="button is-light">Log in</a>
 							</div>
 						</div>
 					{% endif %}
@@ -79,7 +79,7 @@
             {% endblock %}
 		</section>
 
-		{% include 'parts/newsletter.html' %}
+
 
 		<footer class="footer">
 			<div class="columns">
@@ -89,7 +89,7 @@
 
 				<div class="column is-8">
 					<a href="{% url 'contact' %}" class="navbar-item">Contact</a>
-					<a href="{% url 'about' %}" class="navbar-item">About</a>
+					<a href="" class="navbar-item">About</a>
 				</div>
 			</div>
 		</footer>
